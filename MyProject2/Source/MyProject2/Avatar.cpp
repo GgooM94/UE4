@@ -34,6 +34,7 @@ void AAvatar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	InputComponent->BindAxis("Strafe", this, &AAvatar::MoveRight);
 	InputComponent->BindAxis("Yaw", this, &AAvatar::Yaw);
 	InputComponent->BindAxis("Pitch", this, &AAvatar::Pitch); 
+	InputComponent->BindAction("Inventory", IE_Pressed, this, &AAvatar::ToggleInventory);
 }
 
 void AAvatar::MoveFoward(float amount)
@@ -62,4 +63,12 @@ void AAvatar::Yaw(float amount)
 void AAvatar::Pitch(float amount)
 {
 	AddControllerPitchInput(200.0f * amount * GetWorld()->GetDeltaSeconds());
+}
+
+void AAvatar::ToggleInventory()
+{
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(0, 5.f, FColor::Red, "인벤토리 출력 중...");
+	}
 }
