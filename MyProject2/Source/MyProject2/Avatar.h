@@ -19,6 +19,11 @@ public:
 	void Yaw(float amount);
 	void Pitch(float amount);
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerProperties)
+		float Hp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerProperties)
+		float MaxHp;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

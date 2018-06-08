@@ -48,5 +48,8 @@ public:
 	void addMessage(Message msg);
 
 	void AMyHUD::DrawMessages();
+
+	// Ã¼·Â¹Ù
+	void AMyHUD::DrawHealthbar();
 	
 };
